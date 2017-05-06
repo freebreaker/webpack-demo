@@ -1,0 +1,446 @@
+*{
+  margin:0;
+  padding:0;
+  font-family:'微软雅黑';
+}
+
+.container{
+  width:1170px;
+  margin:0 auto;
+}
+
+ul li{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+}
+
+/*导航栏部分的css*/
+
+.headerbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    width:100%;
+    height: 100px;
+    z-index: 100;
+}
+
+.headerbar nav a{
+  display:inline-block;
+  float:left;
+  line-height:100px;
+  color:#e4b32b;
+  font-size:42px;
+  font-weight:bold;
+
+}
+
+
+.headerbar nav ul li a{
+  display:inline-block;
+  float:right;
+  margin-left:20px;
+  color:white;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.headerbar nav ul li a:hover{
+  color:#e4b32b;
+  
+}
+
+/*panner部分样式*/
+
+
+    .carousel .img-ct{
+      position: relative;
+      height: 850px;
+      overflow: hidden;
+    }
+
+    .banner .carousel .img-ct img{
+    width: 1920px;
+    height: 850px;
+}
+
+
+    .carousel .img-ct:after{
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+    .carousel .img-ct li{
+      float: left;
+    }
+
+
+
+    .arrow{
+        position: absolute;
+        top: 50%;
+        font-size: 30px;
+        margin-top: -40px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        background: #4E443C;
+        color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 2px #999;
+        opacity: 0.6
+
+    }
+    .arrow:hover {
+        opacity: 1;
+    }
+    .btn-pre{
+      left: 10px;
+    }
+    .btn-next{
+      right: 10px;
+    }
+    .bullet {
+        position: absolute;
+        bottom: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bullet li {
+        width: 80px;
+        height: 20px;
+        border-radius: 30px;
+        background: #fff;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+ .bullet li.active {
+        background: #666;
+    }
+
+
+
+
+
+
+
+.banner .centerInfo a{
+  display:block;
+  position:absolute;
+  width:800px;
+  height:300px;
+  top:50%;
+  left:50%;
+  margin-top:-150px;
+  margin-left:-350px;
+  color:white;
+  font-size:32px;
+  padding:10px;
+
+}
+
+.banner .centerInfo a h2{
+  text-align:center;
+}
+
+.banner .centerInfo a span{
+  display:inline-block;
+  width:200px;
+  text-align:center;
+  background-color:#29501f;
+  margin-left:35%;
+  margin-top:20px;
+  padding:8px;
+  border-radius:5px;
+}
+
+
+/*main部分样式*/
+
+.service{
+  text-align:center;
+  margin-top:100px;
+}
+
+.service ul{
+  margin-left:-100px;
+}
+
+.service ul li{
+  display:inline-block;
+  width:500px;
+  margin-left:100px;
+  margin-top:50px;
+}
+
+.service ul li img{
+  width:300px;
+  height:300px;
+  border-radius:50%;
+}
+
+/*scences部分样式*/
+
+#scenes{
+  position: relative;
+  width:1170px;
+  text-align:center;
+  margin:0 auto;  
+  margin-top:150px;
+
+}
+
+#scenes:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+
+#ct li{
+  display:inline-block;
+  width:300px;
+  float:left;
+  margin-left:60px;
+  margin-top:100px;
+}
+
+
+
+#ct li img{
+  width:300px;
+  height:300px;
+}
+
+#ct li p{
+  padding-top:40px;
+}
+
+#scenes a{
+  position: absolute;
+  left: 50%;
+  bottom: -80px;
+  border: 1px solid #E27272;
+  border-radius: 3px;
+  padding: 10px;
+  color: #E27272;
+  margin-left: -50px;
+
+
+}
+
+
+/*history部分的样式*/
+
+#history{
+  width:1170px;
+  margin:0 auto;
+  margin-top:150px;
+}
+
+#history:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+
+#history h1{
+  text-align:center;
+}
+
+.timeline{
+  width:100%;
+  margin-top:100px;
+  margin-bottom:50px;
+  position:relative;
+  float:left;
+}
+
+.timeline-left-info{
+  width:40%;
+  float:left;
+  text-align:left;
+}
+
+.timeline-right-info{
+  width:40%;
+  float:right;
+  text-align:right;
+}
+
+.timeline-img{
+  position:absolute;
+  left:42.9%;
+  z-index:88;
+ 
+}
+
+.timeline:before{
+            top:152px;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+            height:100px;
+      content: "";
+      background-color: #e4e0e0;
+      position: absolute;
+}
+
+ .timeline-img img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:8px solid #e4e0e0;
+}
+
+
+.timeline4{
+  width:100%;
+  margin-top:100px;
+  margin-bottom:50px;
+  position:relative;
+  float:left;
+}
+
+/*footer底部contact样式*/
+
+footer{
+  width:100%;
+  height:700px;
+  margin-top:250px;
+  background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488949592&di=123a9346b97f99f056e57a0dd78c81b2&imgtype=jpg&er=1&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201309%2F18%2F20130918014146_2NY4a.jpeg);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity:0.9;
+
+}
+
+#contact{
+  width:1170px;
+  margin:0 auto;
+  padding-top:150px;
+  text-align:center;
+}
+
+#contact:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+
+.left-form{
+  width:40%;
+  float:left;
+}
+
+.left-form form input{
+  width:100%;
+  height:40px;
+  outline:none;
+  border:0;
+  margin-top:30px;
+  padding:10px;
+  border-radius:5px;
+}
+
+.right-textarea textarea{
+  box-sizing:border-box;
+  float:right;
+  margin-top:30px;
+  padding:15px;
+  border-radius:5px;
+}
+
+.middle-submit{
+  margin:0 auto;
+  text-align:center;
+  margin-top:400px;
+}
+
+.middle-submit input{
+  width:200px;
+  height:80px;
+  outline:none;
+  border:0;
+  background:#29501f;
+  color:white;
+  font-size:32px;
+  border-radius:5px;
+}
+
+/*页面最底部的样式*/
+
+#index-footer{
+  width:1170px;
+  margin:0 auto;
+}
+
+#index-footer:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+
+.copyright{
+  width:500px;
+  display:inline-block;
+  float:left;
+  padding-top:60px;
+  padding-bottom:60px;
+}
+
+.icon{
+  margin:0 auto;
+  display:inline-block;
+}
+
+.privacy{
+  float:right;
+  display:inline-block;
+  padding-top:60px;
+  padding-bottom:60px;
+}
+
+
+.privacy a{
+  color:#e4b32b;
+  margin-left:10px;
+}
+
+
+/*底部的三个小图标*/
+@font-face {
+  font-family: 'iconfont';  /* project id 242843 */
+  src: url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.eot');
+  src: url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:50px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon{
+  padding-top:50px;
+}
+
+.middle-iconfont{
+  padding-left:5px;
+  padding-right:5px;
+}
+
+.icon i:hover{
+  color:#e4b32b;
+  transition:.4s;
+}
