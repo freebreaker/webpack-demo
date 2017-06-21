@@ -26,6 +26,7 @@ Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器�
 [demo](https://freebreaker.github.io/webpack-demo/task-webpack.html)
 
 # webpack 文档解析
+![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/1.png)
 
 从上图就可以清晰看出，webpack就是将一堆jade .less .coffee转化成浏览器认识的js或css等，比如我们在写源码的时候，会用到模版引擎等，浏览器不认识啊，经过webpack打包，令浏览器认识。
 
