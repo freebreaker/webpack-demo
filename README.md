@@ -1,6 +1,6 @@
 # webpack-demo
 
-h1 webpack 简述
+
 
 WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其打包为合适的格式以供浏览器使用。主要包含四个核心概念：入口(entry)、输出(output)、loader、插件(plugins)。
 
