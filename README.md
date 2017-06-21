@@ -23,7 +23,7 @@ Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器�
 
 # 在线链接
 
-[demo](https://freebreaker.github.io/webpack-demo/task-webpack.html)
+[demo](https://freebreaker.github.io/webpack-demo/webpack.html)
 
 # webpack 文档解析
 ![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/1.png)
@@ -84,6 +84,13 @@ module.exports = {
 ![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/4.png)
 
 还有通过requirejs  cli的方式。看着都不太方便，不推荐。
+
+
+# 这个demo里
+
+我在这里没有用到loader，因为项目较小，用到的轮播 懒加载组件等等，都打包到dist里的bundle.js
+
+# 关于插件
 
 
 
