@@ -53,6 +53,12 @@ Split the dependency tree into chunks loaded on demand
 3.丰富的插件库
 
 
+# webpack使用
+
+
+这个图将底层原理解释清楚了，就是本来浏览器不认识什么module.exports，通过webpack转化成了图中app.bundle.js
+文档里都有现成的，提一下自己遇到的几个点，一般推荐使用本地安装，二是webpack.config.js的配置文件。
+
 
 
 
