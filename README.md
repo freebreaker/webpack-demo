@@ -56,6 +56,7 @@ Split the dependency tree into chunks loaded on demand
 
 # webpack使用
 
+![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/2.png)
 
 这个图将底层原理解释清楚了，就是本来浏览器不认识什么module.exports，通过webpack转化成了图中app.bundle.js
 文档里都有现成的，提一下自己遇到的几个点，一般推荐使用本地安装，二是webpack.config.js的配置文件。
@@ -63,12 +64,27 @@ Split the dependency tree into chunks loaded on demand
 var path = require('path');
 
 module.exports = {
-  entry: './app/index.js',
+  entry: './app/index.js',     //入口
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist')       //出口
   }
 };
+
+
+# 关于loader
+![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/3.png)
+
+说白了就是一个工具，比如bable-loader，用途是将es6语法转化为浏览器认识的方式，json-loader就是将.json转化。
+
+有三种使用loader的方式
+
+1.在webpack.config.js中，也是最常见的方式
+
+![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/4.png)
+
+还有通过requirejs  cli的方式。看着都不太方便，不推荐。
+
 
 
 
