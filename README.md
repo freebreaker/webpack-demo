@@ -60,7 +60,18 @@ Split the dependency tree into chunks loaded on demand
 这个图将底层原理解释清楚了，就是本来浏览器不认识什么module.exports，通过webpack转化成了图中app.bundle.js
 文档里都有现成的，提一下自己遇到的几个点，一般推荐使用本地安装，二是webpack.config.js的配置文件。
 
+`
 
+var path = require('path');
+
+module.exports = {
+  entry: './app/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+`
 
 
 
