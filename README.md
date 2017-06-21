@@ -25,7 +25,28 @@ Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器�
 
 [demo](https://freebreaker.github.io/webpack-demo/task-webpack.html)
 
-# webpack 解析
+# webpack 文档解析
+
+从上图就可以清晰看出，webpack就是将一堆jade .less .coffee转化成浏览器认识的js或css等，比如我们在写源码的时候，会用到模版引擎等，浏览器不认识啊，经过webpack打包，令浏览器认识。
+
+那为什么还需要另外的模块打包器呢？
+
+现有的打包器不能适应一些功能多的单页应用，有很多模块，那这些模块的管理就很复杂，webpack就是解决这个问题。至于多页应用往往js简单，不需要复杂的管理。
+
+# webpack 目标
+
+Split the dependency tree into chunks loaded on demand
+
+文档的第一条：将依赖树分块去加载。
+
+我的理解是
+
+
+
+
+
+
+
 
 
 
