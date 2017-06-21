@@ -10730,18 +10730,19 @@ module.exports=goTop;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_js_com_loadmore_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_js_com_loadmore_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__src_js_com_loadmore_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_css_task15_css__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_css_task15_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__src_css_task15_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_css_task15_css__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_css_task15_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_css_task15_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_js_com_carousel_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_js_com_carousel_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__src_js_com_carousel_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_js_com_goTop_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_js_com_goTop_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__src_js_com_goTop_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_js_com_exposure_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_js_com_exposure_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__src_js_com_exposure_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_js_com_loadmore_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_js_com_loadmore_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__src_js_com_loadmore_js__);
+
 
 
 
@@ -10757,26 +10758,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+__WEBPACK_IMPORTED_MODULE_1__src_js_com_carousel_js___default.a.init(__WEBPACK_IMPORTED_MODULE_4_jquery___default()('.carousel'));
 
-__WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js___default.a.init(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('.carousel'));
+new __WEBPACK_IMPORTED_MODULE_2__src_js_com_goTop_js___default.a(__WEBPACK_IMPORTED_MODULE_4_jquery___default()('body'));
 
-new __WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js___default.a(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('body'));
-
-__WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js___default.a.init(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('.timeline-img img'),function($img){
+__WEBPACK_IMPORTED_MODULE_3__src_js_com_exposure_js___default.a.init(__WEBPACK_IMPORTED_MODULE_4_jquery___default()('.timeline-img img'),function($img){
     var imgUrl = $img.attr('data-src');
     $img.attr('src', imgUrl);
 })
 
     // 点击加载更多数据
-var $loadmore=__WEBPACK_IMPORTED_MODULE_3_jquery___default()('#loadmore'),
-    $ct=__WEBPACK_IMPORTED_MODULE_3_jquery___default()('#ct'),
+var $loadmore=__WEBPACK_IMPORTED_MODULE_4_jquery___default()('#loadmore'),
+    $ct=__WEBPACK_IMPORTED_MODULE_4_jquery___default()('#ct'),
     pageIndex=0,
     isOver=false
 
 
 $loadmore.on('click',function(){
         var lock=false;
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.ajax({
+        __WEBPACK_IMPORTED_MODULE_4_jquery___default.a.ajax({
             type: "GET",
             url: "/loadmore",
             data:{
@@ -10803,19 +10803,19 @@ $loadmore.on('click',function(){
     function appendHtml(newsData){
         if (newsData.length===0) {
             isOver=true;
-            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#ct').append('<p>没有更多数据了</p>')
+            __WEBPACK_IMPORTED_MODULE_4_jquery___default()('#ct').append('<p>没有更多数据了</p>')
             return 
         }
 
         var htmls=''
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.each(newsData, function(){
+        __WEBPACK_IMPORTED_MODULE_4_jquery___default.a.each(newsData, function(){
             htmls += '<li>';
             htmls += '<img src="' + this.img +'">';
             htmls += '<p>'+this.title+'</p>';
             htmls += '</li>';
         })
 
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#ct').append(htmls);
+        __WEBPACK_IMPORTED_MODULE_4_jquery___default()('#ct').append(htmls);
     }
 
   
