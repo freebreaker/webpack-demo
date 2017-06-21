@@ -1,5 +1,6 @@
 
 var path = require('path');
+const webpack = require('webpack'); //访问内置的插件
 
 module.exports = {
   entry: './app/index.js',
@@ -17,5 +18,8 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+    plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 };
