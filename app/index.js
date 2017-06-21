@@ -1,6 +1,5 @@
 
-
-import '../src/css/task15.css'
+import 'babel-polyfill';
 import Carousel from '../src/js/com/carousel.js'
 import goTop from '../src/js/com/goTop.js'
 import exposure from '../src/js/com/exposure.js'
@@ -76,5 +75,5 @@ $loadmore.on('click',function(){
 
   
 
-
+import '../src/css/task15.css'
 
