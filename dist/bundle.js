@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10330,6 +10330,37 @@ return jQuery;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(7);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./task15.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./task15.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
  
 
 var $=__webpack_require__(0)
@@ -10453,7 +10484,7 @@ module.exports= Carousel;
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
                                                               
@@ -10561,7 +10592,7 @@ Lazy.one($('.container img'), function($node){
 module.exports=exposure;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -10621,7 +10652,7 @@ module.exports=goTop;
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
   
@@ -10694,37 +10725,58 @@ module.exports=goTop;
 
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_js_com_loadmore_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_js_com_loadmore_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__src_js_com_loadmore_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_css_task15_css__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_css_task15_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__src_css_task15_css__);
 
 
 
-var Carousel=__webpack_require__(1),
-    goTop=__webpack_require__(3),
-    exposure=__webpack_require__(2),
-    _Loadmore=__webpack_require__(4),
-    $=__webpack_require__(0);
 
 
-Carousel.init($('.carousel'));
 
-new goTop($('body'));
 
-exposure.init($('.timeline-img img'),function($img){
+
+    // goTop=require('../src/js/com/goTop.js'),
+    // exposure=require('../src/js/com/exposure.js'),
+    // _Loadmore=require('../src/js/com/loadmore.js'),
+    // $=require('jquery');
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0__src_js_com_carousel_js___default.a.init(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('.carousel'));
+
+new __WEBPACK_IMPORTED_MODULE_1__src_js_com_goTop_js___default.a(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('body'));
+
+__WEBPACK_IMPORTED_MODULE_2__src_js_com_exposure_js___default.a.init(__WEBPACK_IMPORTED_MODULE_3_jquery___default()('.timeline-img img'),function($img){
     var imgUrl = $img.attr('data-src');
     $img.attr('src', imgUrl);
 })
 
     // 点击加载更多数据
-var $loadmore=$('#loadmore'),
-    $ct=$('#ct'),
+var $loadmore=__WEBPACK_IMPORTED_MODULE_3_jquery___default()('#loadmore'),
+    $ct=__WEBPACK_IMPORTED_MODULE_3_jquery___default()('#ct'),
     pageIndex=0,
     isOver=false
 
 
 $loadmore.on('click',function(){
         var lock=false;
-        $.ajax({
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.ajax({
             type: "GET",
             url: "/loadmore",
             data:{
@@ -10751,25 +10803,575 @@ $loadmore.on('click',function(){
     function appendHtml(newsData){
         if (newsData.length===0) {
             isOver=true;
-            $('#ct').append('<p>没有更多数据了</p>')
+            __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#ct').append('<p>没有更多数据了</p>')
             return 
         }
 
         var htmls=''
-        $.each(newsData, function(){
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default.a.each(newsData, function(){
             htmls += '<li>';
             htmls += '<img src="' + this.img +'">';
             htmls += '<p>'+this.title+'</p>';
             htmls += '</li>';
         })
 
-        $('#ct').append(htmls);
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#ct').append(htmls);
     }
 
   
 
 
 
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "*{\r\n  margin:0;\r\n  padding:0;\r\n  font-family:'\\5FAE\\8F6F\\96C5\\9ED1';\r\n}\r\n\r\n.container{\r\n  width:1170px;\r\n  margin:0 auto;\r\n}\r\n\r\nul li{\r\n  list-style:none;\r\n}\r\na{\r\n  text-decoration:none;\r\n}\r\n\r\n/*导航栏部分的css*/\r\n\r\n.headerbar{\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    background: rgba(0, 0, 0, .5);\r\n    width:100%;\r\n    height: 100px;\r\n    z-index: 100;\r\n}\r\n\r\n.headerbar nav a{\r\n  display:inline-block;\r\n  float:left;\r\n  line-height:100px;\r\n  color:#e4b32b;\r\n  font-size:42px;\r\n  font-weight:bold;\r\n\r\n}\r\n\r\n\r\n.headerbar nav ul li a{\r\n  display:inline-block;\r\n  float:right;\r\n  margin-left:20px;\r\n  color:white;\r\n  font-size:28px;\r\n  font-weight:bold;\r\n}\r\n\r\n.headerbar nav ul li a:hover{\r\n  color:#e4b32b;\r\n  \r\n}\r\n\r\n/*panner部分样式*/\r\n\r\n\r\n    .carousel .img-ct{\r\n      position: relative;\r\n      height: 850px;\r\n      overflow: hidden;\r\n    }\r\n\r\n    .banner .carousel .img-ct img{\r\n    width: 1920px;\r\n    height: 850px;\r\n}\r\n\r\n\r\n    .carousel .img-ct:after{\r\n      content: ' ';\r\n      display: block;\r\n      clear: both;\r\n    }\r\n    .carousel .img-ct li{\r\n      float: left;\r\n    }\r\n\r\n\r\n\r\n    .arrow{\r\n        position: absolute;\r\n        top: 50%;\r\n        font-size: 30px;\r\n        margin-top: -40px;\r\n        width: 80px;\r\n        height: 80px;\r\n        line-height: 80px;\r\n        text-align: center;\r\n        background: #4E443C;\r\n        color: #fff;\r\n        border-radius: 50%;\r\n        box-shadow: 0 0 2px #999;\r\n        opacity: 0.6\r\n\r\n    }\r\n    .arrow:hover {\r\n        opacity: 1;\r\n    }\r\n    .btn-pre{\r\n      left: 10px;\r\n    }\r\n    .btn-next{\r\n      right: 10px;\r\n    }\r\n    .bullet {\r\n        position: absolute;\r\n        bottom: 150px;\r\n        left: 50%;\r\n        transform: translateX(-50%);\r\n    }\r\n    .bullet li {\r\n        width: 80px;\r\n        height: 20px;\r\n        border-radius: 30px;\r\n        background: #fff;\r\n        display: inline-block;\r\n        cursor: pointer;\r\n    }\r\n\r\n .bullet li.active {\r\n        background: #666;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.banner .centerInfo a{\r\n  display:block;\r\n  position:absolute;\r\n  width:800px;\r\n  height:300px;\r\n  top:50%;\r\n  left:50%;\r\n  margin-top:-150px;\r\n  margin-left:-350px;\r\n  color:white;\r\n  font-size:32px;\r\n  padding:10px;\r\n\r\n}\r\n\r\n.banner .centerInfo a h2{\r\n  text-align:center;\r\n}\r\n\r\n.banner .centerInfo a span{\r\n  display:inline-block;\r\n  width:200px;\r\n  text-align:center;\r\n  background-color:#29501f;\r\n  margin-left:35%;\r\n  margin-top:20px;\r\n  padding:8px;\r\n  border-radius:5px;\r\n}\r\n\r\n\r\n/*main部分样式*/\r\n\r\n.service{\r\n  text-align:center;\r\n  margin-top:100px;\r\n}\r\n\r\n.service ul{\r\n  margin-left:-100px;\r\n}\r\n\r\n.service ul li{\r\n  display:inline-block;\r\n  width:500px;\r\n  margin-left:100px;\r\n  margin-top:50px;\r\n}\r\n\r\n.service ul li img{\r\n  width:300px;\r\n  height:300px;\r\n  border-radius:50%;\r\n}\r\n\r\n/*scences部分样式*/\r\n\r\n#scenes{\r\n  position: relative;\r\n  width:1170px;\r\n  text-align:center;\r\n  margin:0 auto;  \r\n  margin-top:150px;\r\n\r\n}\r\n\r\n#scenes:after{\r\n  content:'';\r\n  display:block;\r\n  clear:both;\r\n}\r\n\r\n#ct li{\r\n  display:inline-block;\r\n  width:300px;\r\n  float:left;\r\n  margin-left:60px;\r\n  margin-top:100px;\r\n}\r\n\r\n\r\n\r\n#ct li img{\r\n  width:300px;\r\n  height:300px;\r\n}\r\n\r\n#ct li p{\r\n  padding-top:40px;\r\n}\r\n\r\n#scenes a{\r\n  position: absolute;\r\n  left: 50%;\r\n  bottom: -80px;\r\n  border: 1px solid #E27272;\r\n  border-radius: 3px;\r\n  padding: 10px;\r\n  color: #E27272;\r\n  margin-left: -50px;\r\n\r\n\r\n}\r\n\r\n\r\n/*history部分的样式*/\r\n\r\n#history{\r\n  width:1170px;\r\n  margin:0 auto;\r\n  margin-top:150px;\r\n}\r\n\r\n#history:after{\r\n  content:'';\r\n  display:block;\r\n  clear:both;\r\n}\r\n\r\n#history h1{\r\n  text-align:center;\r\n}\r\n\r\n.timeline{\r\n  width:100%;\r\n  margin-top:100px;\r\n  margin-bottom:50px;\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n.timeline-left-info{\r\n  width:40%;\r\n  float:left;\r\n  text-align:left;\r\n}\r\n\r\n.timeline-right-info{\r\n  width:40%;\r\n  float:right;\r\n  text-align:right;\r\n}\r\n\r\n.timeline-img{\r\n  position:absolute;\r\n  left:42.9%;\r\n  z-index:88;\r\n \r\n}\r\n\r\n.timeline:before{\r\n            top:152px;\r\n      bottom: 0;\r\n      left: 50%;\r\n      width: 2px;\r\n            height:100px;\r\n      content: \"\";\r\n      background-color: #e4e0e0;\r\n      position: absolute;\r\n}\r\n\r\n .timeline-img img{\r\n  width:150px;\r\n  height:150px;\r\n  border-radius:50%;\r\n  border:8px solid #e4e0e0;\r\n}\r\n\r\n\r\n.timeline4{\r\n  width:100%;\r\n  margin-top:100px;\r\n  margin-bottom:50px;\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n/*footer底部contact样式*/\r\n\r\nfooter{\r\n  width:100%;\r\n  height:700px;\r\n  margin-top:250px;\r\n  background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488949592&di=123a9346b97f99f056e57a0dd78c81b2&imgtype=jpg&er=1&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201309%2F18%2F20130918014146_2NY4a.jpeg);\r\n  background-size:cover;\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  opacity:0.9;\r\n\r\n}\r\n\r\n#contact{\r\n  width:1170px;\r\n  margin:0 auto;\r\n  padding-top:150px;\r\n  text-align:center;\r\n}\r\n\r\n#contact:after{\r\n  content:'';\r\n  display:block;\r\n  clear:both;\r\n}\r\n\r\n.left-form{\r\n  width:40%;\r\n  float:left;\r\n}\r\n\r\n.left-form form input{\r\n  width:100%;\r\n  height:40px;\r\n  outline:none;\r\n  border:0;\r\n  margin-top:30px;\r\n  padding:10px;\r\n  border-radius:5px;\r\n}\r\n\r\n.right-textarea textarea{\r\n  box-sizing:border-box;\r\n  float:right;\r\n  margin-top:30px;\r\n  padding:15px;\r\n  border-radius:5px;\r\n}\r\n\r\n.middle-submit{\r\n  margin:0 auto;\r\n  text-align:center;\r\n  margin-top:400px;\r\n}\r\n\r\n.middle-submit input{\r\n  width:200px;\r\n  height:80px;\r\n  outline:none;\r\n  border:0;\r\n  background:#29501f;\r\n  color:white;\r\n  font-size:32px;\r\n  border-radius:5px;\r\n}\r\n\r\n/*页面最底部的样式*/\r\n\r\n#index-footer{\r\n  width:1170px;\r\n  margin:0 auto;\r\n}\r\n\r\n#index-footer:after{\r\n  content:'';\r\n  display:block;\r\n  clear:both;\r\n}\r\n\r\n.copyright{\r\n  width:500px;\r\n  display:inline-block;\r\n  float:left;\r\n  padding-top:60px;\r\n  padding-bottom:60px;\r\n}\r\n\r\n.icon{\r\n  margin:0 auto;\r\n  display:inline-block;\r\n}\r\n\r\n.privacy{\r\n  float:right;\r\n  display:inline-block;\r\n  padding-top:60px;\r\n  padding-bottom:60px;\r\n}\r\n\r\n\r\n.privacy a{\r\n  color:#e4b32b;\r\n  margin-left:10px;\r\n}\r\n\r\n\r\n/*底部的三个小图标*/\r\n@font-face {\r\n  font-family: 'iconfont';  /* project id 242843 */\r\n  src: url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.eot');\r\n  src: url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.eot?#iefix') format('embedded-opentype'),\r\n  url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.woff') format('woff'),\r\n  url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.ttf') format('truetype'),\r\n  url('//at.alicdn.com/t/font_9s0e7sbw609hpvi.svg#iconfont') format('svg');\r\n}\r\n\r\n.iconfont {\r\n  font-family:\"iconfont\" !important;\r\n  font-size:50px;\r\n  font-style:normal;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.icon{\r\n  padding-top:50px;\r\n}\r\n\r\n.middle-iconfont{\r\n  padding-left:5px;\r\n  padding-right:5px;\r\n}\r\n\r\n.icon i:hover{\r\n  color:#e4b32b;\r\n  transition:.4s;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			memo[selector] = fn.call(this, selector);
+		}
+
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(10);
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton) options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+	if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	options.attrs.type = "text/css";
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	options.attrs.type = "text/css";
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
 
 
 /***/ })

@@ -1,10 +1,17 @@
 
 
-var Carousel=require('../src/js/com/carousel.js'),
-    goTop=require('../src/js/com/goTop.js'),
-    exposure=require('../src/js/com/exposure.js'),
-    _Loadmore=require('../src/js/com/loadmore.js'),
-    $=require('jquery');
+import Carousel from '../src/js/com/carousel.js'
+import goTop from '../src/js/com/goTop.js'
+import exposure from '../src/js/com/exposure.js'
+import $ from 'jquery'
+import _Loadmore from '../src/js/com/loadmore.js'
+
+    // goTop=require('../src/js/com/goTop.js'),
+    // exposure=require('../src/js/com/exposure.js'),
+    // _Loadmore=require('../src/js/com/loadmore.js'),
+    // $=require('jquery');
+
+import '../src/css/task15.css'
 
 
 Carousel.init($('.carousel'));
