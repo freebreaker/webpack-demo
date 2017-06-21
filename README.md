@@ -88,9 +88,34 @@ module.exports = {
 
 # 这个demo里
 
-我在这里没有用到loader，因为项目较小，用到的轮播 懒加载组件等等，都打包到dist里的bundle.js
+简单的用了babel-loader，css-loader,因为项目较小，用到的轮播 懒加载组件等等，都打包到dist里的bundle.js
 
 # 关于插件
+
+我在发布到githubpages  发现了网站的图片过于大。而且bundlejs也有三百多k
+
+![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/8.png)
+
+于是果断的搜文档，找到了webpack自带的压缩插件，
+
+const webpack = require('webpack'); //访问内置的插件
+
+module.exports={
+  xxx
+
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+
+
+  xxx
+
+}
+
+果然体积小了许多。
+
+![image](https://github.com/freebreaker/webpack-demo/blob/master/imgs/9.png)
+
 
 
 
